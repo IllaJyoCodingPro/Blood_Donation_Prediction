@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Prediction</title>
+  <style>
+    body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #c77171;
+}
+
+.container {
+width: 80%;
+margin: 50px auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+text-align: center;
+}
+
+form {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+label {
+margin-bottom: 10px;
+}
+
+select {
+padding: 8px;
+margin-bottom: 20px;
+}
+
+button {
+padding: 10px 20px;
+background-color: rgb(232, 60, 60);
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: rgb(232, 60, 60);
+}
+
+#result {
+margin-top: 20px;
+font-size: 18px;
+text-align: center;
+}
+
+#predictionCount {
+margin-bottom: 10px;
+}
+
+#additionalInfo {
+border-top: 1px solid #ccc;
+padding-top: 10px;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Blood Donation Prediction</h1>
+    <form id="bloodForm">
+      <label for="bloodGroup">Select Blood Group:</label>
+      <select id="bloodGroup" name="bloodGroup">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <!-- Add other blood group options here -->
+      </select>
+      <button type="submit">Predict</button>
+    </form>
+    <div id="result">
+      <div id="predictionCount">Predicted Count: <span id="predictedCount"></span></div>
+      <div id="additionalInfo">
+        <!-- Additional information will be displayed here -->
+      </div>
+    </div>
+  </div>
+  <script>
+         document.addEventListener('DOMContentLoaded', function () {
+      const bloodForm = document.getElementById('bloodForm');
+      bloodForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const bloodGroup = document.getElementById('bloodGroup').value;
+        predictBloodGroup(bloodGroup);
+      });
+
+      function predictBloodGroup(bloodGroup) {
+        fetch('/predict', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ bloodGroup: bloodGroup }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data); // Check the data received in the console
+          const predictionCount = data.predictionCount;
+          document.getElementById('predictedCount').innerText = predictionCount;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
