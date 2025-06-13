@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap --> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="css/style-min.css">
+    <title>Bonded</title>
+
+    <style>
+        .container {
+            padding: 50px;
+        }
+        .gender-select {
+            margin-top: 10px;
+            text-align: left;
+        }
+        .gender-select label {
+            margin-right: 10px;
+        }
+        .blood-group-select {
+            margin-top: 10px;
+            text-align: left;
+        }
+        .blood-group-select label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-6">
+                <!-- Material form register -->
+                <div class="card">
+                    <h5 class="card-header danger-color white-text text-center py-4">
+                        <strong>CREAT ACCOUNT</strong>
+                    </h5>
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+                        <!-- Form -->
+                        <form class="text-center" style="color: #757575;" action="#!">
+                            <div class="form-row">
+                                <div class="col">
+                                    <!-- First name -->
+                                    <div class="md-form">
+                                        <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                                        <label for="materialRegisterFormFirstName">First name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Last name -->
+                                    <div class="md-form">
+                                        <input type="text" id="materialRegisterFormLastName" class="form-control">
+                                        <label for="materialRegisterFormLastName">Last name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <!-- Email -->
+                                    <div class="md-form">
+                                        <input type="email" id="materialRegisterFormEmail" class="form-control">
+                                        <label for="materialRegisterFormEmail">E-mail</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Phone Number -->
+                                    <div class="md-form">
+                                        <input type="tel" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                                        <label for="materialRegisterFormPhone">Phone number</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <!-- Age -->
+                                    <div class="md-form">
+                                        <input type="tel" id="materialRegisterFormAge" class="form-control">
+                                        <label for="materialRegisterFormAge">Age</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Gender -->
+                                    <div class="gender-select">
+                                        <label for="gender">Gender:</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                            <label class="form-check-label" for="male">Male</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                            <label class="form-check-label" for="female">Female</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                                            <label class="form-check-label" for="other">Other</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- Blood group -->
+                                    <div class="blood-group-select">
+                                        <label for="materialRegisterFormbloodgroup">Blood Group:</label>
+                                        <select class="form-control" id="materialRegisterFormbloodgroup" name="bloodgroup" required>
+                                            <option value="A+" selected>A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Password -->
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input type="password" id="materialRegisterFormPassword" class="form-control">
+                                        <label for="materialRegisterFormPassword">Password</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input type="password" id="materialRegisterFormConfirmPassword" class="form-control">
+                                        <label for="materialRegisterFormConfirmPassword">Confirm Password</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Sign up button -->
+                            <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">SUBMIT</button>
+                        </form>
+                        <!-- Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

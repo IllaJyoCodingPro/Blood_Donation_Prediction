@@ -1,0 +1,199 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <title>Jyo - Your blood can save lives</title>
+    <style>
+         /* Custom CSS for Udhiram Form */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+    max-width: 600px; /* Adjust the maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+form {
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333; /* Darken label color */
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 24px; /* Increase padding */
+    border: none;
+    border-radius: 5px;
+    background-color: #d53d5e;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #c8003b; /* Darken color on hover */
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+h6 {
+    margin-top: 20px;
+    color: #888; /* Light gray text color */
+    font-size: 12px;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin-top: 30px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='createac.css'>
+        <!-- Link to createac.css -->
+        <link rel="stylesheet" href="createac.css">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.min.css">
+        <link rel="stylesheet" type="text/css" href="css/media.scss">
+        <link rel="stylesheet" type="text/css" href="css/uthiram.css">
+        <link rel="stylesheet" type="text/css" href="css/gravity.css">
+    </header>    
+    <div class="container">
+			<div class="row mt20">
+    <form name="myform" action="thankyou.html" onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td>
+                    <label>First Name* :
+                            <input class="form-control" type="text" id="fname" placeholder="First Name" tabindex="1" required>
+                    </label>
+                        <label>Last Name* :
+                                <input class="form-control" type="text" id="lname" placeholder="Last Name" tabindex="2" required>
+                        </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Age* :
+                            <input class="form-control" type="number" id="age" placeholder="Age" tabindex="3" required>
+                    </label>
+                        <label>Gender* :
+                                <input type="radio" id="female" name="gender" tabindex="4">Female</label>
+                        <input type="radio" id="male" name="gender" tabindex="5">Male
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Height(in cms)* :
+                            <input class="form-control" type="number" id="height" placeholder="Height" tabindex="6" required>
+                    </label>
+                        <label>Weight(in Kgs)* :
+                                <input class="form-control" type="number" id="weight" placeholder="Weight" tabindex="7" required>
+                        </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Phone No* :
+                            <input class="form-control" type="number" id="phone" maxlength="10" tabindex="8" placeholder="Contact No" required>
+                    </label>
+                    <label>Blood Group* :</label>
+                            <select class="form-control" id="bloodgrplist" tabindex="9" required>
+                                <option selected>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                            </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address :</label>
+                        <textarea class="form-control" id="address" tabindex="10" placeholder="Type your address here"></textarea>
+                        <label>Email* :</label>
+                                <input class="form-control" type="text" id="email" placeholder="Email" required>
+            	</td>
+            </tr>
+            <tr>
+                <td><label>Bad Habits* :</label>
+                        <input type="checkbox" name="chk" tabindex="11">I smoke a lot &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="chk" tabindex="12">I drink a lot &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="checkbox" name="chk" tabindex="13">None
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Pincode :
+                            <input class="form-control" type="number" id="pin" tabindex="14" placeholder="pincode">
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <div class="buttn">
+            <input type="submit" id="mySubmit" value="Submit" tabindex="15"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" value="Reset" tabindex="16">
+        </div>
+        <br>
+        <br>
+        <h6>* indicates required fields</h6>
+    </form>
+    </div>
+    </div>
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</footer>
+</body>
+
+</html>
